@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public app can submit bookings. Only authenticated admin users can read/update.
+    // For production, consider App Check, validation, and rate limiting.
+    match /bookings/{bookingId} {
+      allow create: if request.resource.data.keys().hasAll([
+        'patientName', 'phone', 'service', 'preferredDate', 'preferredTime',
+        'address', 'notes', 'status', 'createdAt'
+      ]);
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "Private Nursing Home Services",
+    "slug": "private-nursing-home-services",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.private.nursinghomeservices",
+      "versionCode": 1
+    },
+    "extra": {
+      "eas": {
+        "projectId": "REPLACE_WITH_EAS_PROJECT_ID"
+      }
+    }
+  }
+}
